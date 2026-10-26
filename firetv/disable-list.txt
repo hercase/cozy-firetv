@@ -1,0 +1,66 @@
+# Packages disabled with `pm disable-user --user 0`. Nothing is uninstalled.
+# restore.sh re-enables every package listed here. Lines starting with # are ignored.
+
+## Amazon telemetry / analytics
+# protected, Fire OS refuses to disable: com.amazon.device.crashmanager
+# protected, Fire OS refuses to disable: com.amazon.device.logmanager
+# protected, Fire OS refuses to disable: com.amazon.device.metrics
+com.amazon.device.telemetry.emitter
+com.amazon.dp.logger
+com.amazon.neo.minerva
+com.amazon.neo.minerva.logcat
+com.amazon.perfcollection
+com.amazon.wirelessmetrics.service
+com.amazon.connectivitydiag
+com.amazon.tv.developer.dataservice
+# protected, Fire OS refuses to disable: com.fireos.usagestats.proxy
+com.amazon.tv.acr
+
+## Amazon content / ad services
+com.amazon.media.recommendations
+# protected, Fire OS refuses to disable: com.amazon.ftvads.deeplinking
+com.amazon.hybridadidservice
+com.amazon.sneakpeek
+com.amazon.kso.blackbird
+com.amazon.shoptv.client
+com.amazon.shoptv.firetv.client
+com.amazon.minitv.android.app
+com.amazon.providers.contentsupport
+com.amazon.tv.ftvambient
+com.amazon.tv.earlyaccess
+com.amazon.tv.releasenotes
+
+## Background services you don't need
+com.amazon.sharingservice.android.client.proxy
+com.amazon.ods.kindleconnect
+com.amazon.tv.ottssocompanionapp
+com.android.printservice.recommendation
+com.android.protips
+
+## Preloaded apps
+com.amazon.storm.lightning.tutorial
+com.amazon.tmm.tutorial
+# protected, Fire OS refuses to disable: com.amazon.tv.csapp
+com.amazon.tv.website_launcher
+com.amazon.gamehub
+com.amazon.tahoe
+
+## Your choices: apps you don't use
+# kept enabled: com.hbo.hbonow
+# kept enabled: com.amazon.tv.livetv
+# kept enabled: com.amazon.bueller.music
+# kept enabled: com.amazon.bueller.photos
+
+## Your choices: phone casting (Fling / DIAL)
+# kept enabled: com.amazon.awvflingreceiver
+# kept enabled: com.amazon.dialservice
+# kept enabled: com.amazon.whisperplay.service.install
+
+## Your choices: Miracast screen mirroring
+# kept enabled: com.amazon.cast.sink
+
+## Your choices: system updates
+# protected, Fire OS refuses to disable: com.amazon.device.software.ota
+# protected, Fire OS refuses to disable: com.amazon.device.software.ota.override
+# kept enabled: com.amazon.tv.forcedotaupdater.v2
+# kept enabled: com.amazon.tv.easyupgrade

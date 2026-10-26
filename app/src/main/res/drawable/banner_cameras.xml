@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tile art for the cameras app: a camera on a deep blue card, 16:9 like the other banners. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+
+    <path
+        android:fillColor="#12324A"
+        android:pathData="M0,0h320v180h-320z" />
+
+    <!-- Soft glow behind the lens. -->
+    <path
+        android:fillColor="#1B4A6B"
+        android:pathData="M160,90m-62,0a62,62 0 1,1 124,0a62,62 0 1,1 -124,0" />
+
+    <!-- Top bump of the camera body. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M136,62l7,-12h34l7,12z" />
+
+    <!-- Camera body. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M112,62h96a12,12 0 0,1 12,12v36a12,12 0 0,1 -12,12h-96a12,12 0 0,1 -12,-12v-36a12,12 0 0,1 12,-12z" />
+
+    <!-- Lens. -->
+    <path
+        android:fillColor="#12324A"
+        android:pathData="M160,92m-21,0a21,21 0 1,1 42,0a21,21 0 1,1 -42,0" />
+    <path
+        android:fillColor="#4FC3F7"
+        android:pathData="M160,92m-13,0a13,13 0 1,1 26,0a13,13 0 1,1 -26,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M165,87m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0" />
+
+    <!-- Recording light. -->
+    <path
+        android:fillColor="#FF5252"
+        android:pathData="M205,73m-3.5,0a3.5,3.5 0 1,1 7,0a3.5,3.5 0 1,1 -7,0" />
+</vector>

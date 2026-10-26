@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 960x540dp canvas on a 1080p TV: the mockup's pixel values halved. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <com.cosyhome.tv.SceneView
+        android:id="@+id/scene"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/scrim" />
+
+    <!-- Clock screen. Shifted a few dp every minute so nothing sits still on the OLED panel. -->
+    <FrameLayout
+        android:id="@+id/homeLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="66dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 200"
+                android:fontFeatureSettings="tnum"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.04"
+                android:textSize="150sp" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 300"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 400"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="112dp"
+            android:drawableStart="@drawable/ic_chevron_down"
+            android:drawablePadding="5dp"
+            android:drawableTint="#E6FFFFFF"
+            android:fontFamily="@font/outfit"
+            android:fontVariationSettings="'wght' 500"
+            android:text="@string/all_apps_hint"
+            android:textColor="#E6FFFFFF"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/dock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="40dp"
+            android:clipChildren="false"
+            android:orientation="horizontal" />
+    </FrameLayout>
+
+    <!-- All apps and inputs, over the same scene. -->
+    <FrameLayout
+        android:id="@+id/appsLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#29000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/back"
+                style="@style/Chip"
+                android:drawableStart="@drawable/ic_chevron_up"
+                android:text="@string/back_to_clock" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/ambilight"
+                style="@style/Chip"
+                android:drawableStart="@drawable/ic_ambilight"
+                android:text="@string/ambilight" />
+
+            <TextView
+                android:id="@+id/settings"
+                style="@style/Chip"
+                android:layout_marginStart="8dp"
+                android:drawableStart="@drawable/ic_settings"
+                android:text="@string/settings" />
+
+            <TextView
+                android:id="@+id/headerTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/outfit"
+                android:fontVariationSettings="'wght' 400"
+                android:fontFeatureSettings="tnum"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <com.cosyhome.tv.GlassPanel
+            android:id="@+id/appsPanel"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="48dp"
+            android:clipChildren="false"
+            android:paddingStart="14dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/outfit"
+                        android:fontVariationSettings="'wght' 600"
+                        android:text="@string/apps"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/focusedName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/outfit"
+                        android:fontVariationSettings="'wght' 400"
+                        android:textColor="#D9FFFFFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- The grid's own padding (clipToPadding off) is the room a zoomed edge tile draws into:
+                     on the GPU path a view is clipped to its own bounds, so the room must be inside it. -->
+                <com.cosyhome.tv.RoomyScrollView
+                    android:id="@+id/appsScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp"
+                    android:clipToPadding="false"
+                    android:scrollbars="none">
+
+                    <GridLayout
+                        android:id="@+id/appsGrid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:columnCount="6"
+                        android:paddingStart="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="8dp"
+                        android:useDefaultMargins="false" />
+                </com.cosyhome.tv.RoomyScrollView>
+            </LinearLayout>
+        </com.cosyhome.tv.GlassPanel>
+
+        <com.cosyhome.tv.GlassPanel
+            android:id="@+id/inputsPanel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="416dp"
+            android:layout_marginEnd="48dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:id="@+id/inputs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/outfit"
+                    android:fontVariationSettings="'wght' 600"
+                    android:text="@string/inputs"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.cosyhome.tv.GlassPanel>
+    </FrameLayout>
+</FrameLayout>

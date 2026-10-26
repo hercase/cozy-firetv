@@ -1,0 +1,20 @@
+# Build output
+.gradle/
+build/
+app/build/
+*.apk
+
+# Local to your machine. The per-TV cosy.*.properties ARE tracked here on purpose:
+# they are the whole point of this fork. Never the keystore, though.
+local.properties
+keystore.properties
+*.jks
+*.keystore
+
+# Editors
+.idea/
+*.iml
+.vscode/
+
+# Your own TV: debloat lists, logs and scripts
+local/

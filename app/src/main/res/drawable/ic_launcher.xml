@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App icon: the right-hand square of the banner, with the moon and the cottage. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp" android:height="96dp" android:viewportWidth="180" android:viewportHeight="180">
+    <group android:translateX="-140">
+        <path android:pathData="M0,0h320v180h-320z" android:fillColor="#0B1230" />
+        <!-- The crescent: the moon's edge (r9 at 246,38), then the shadow's edge (r8 at 250,36). -->
+        <path android:pathData="M246.13,29A9,9 0,1 0,253.27,43.3A8,8 0,0 1,246.13,29Z" android:fillColor="#F1EAD8" />
+        <path android:pathData="M0,120C40,107 70,110 107,117C143,123 173,107 213,108C250,110 283,120 320,115L320,180L0,180Z" android:fillColor="#161D36" />
+        <path android:pathData="M0,137C43,127 87,132 127,137C167,142 207,127 250,128C283,130 303,133 320,132L320,180L0,180Z" android:fillColor="#0E1326" />
+        <path android:pathData="M253,120h15v9h-15zM251,121l10,-7 10,7z" android:fillColor="#070A14" />
+        <path android:pathData="M256,123h3v3h-3zM262,123h3v3h-3z" android:fillColor="#FFB35C" />
+        <path android:pathData="M0,157C50,147 107,150 150,155C193,160 240,150 283,151C300,151 313,153 320,153L320,180L0,180Z" android:fillColor="#070A14" />
+    </group>
+</vector>
